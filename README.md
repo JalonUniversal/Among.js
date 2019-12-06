@@ -49,6 +49,15 @@ among.remove('name');
 among.get('name'); // undefined
 ```
 
+## Further more
+```js
+// not only can among save key-value, it can also save object-object
+among.save({ type: 'special' }, { list: [{ name: 'book', cost: 12 }, { name: 'phone', cost: 4000 }]});
+among.get({ type: 'special' }); 
+// ensure your key is the same object-string, now you can get the object saved before;
+// { list: [{ name: 'book', cost: 12 }, { name: 'phone', cost: 4000 }]}
+```
+
 ## Advanced
 
 ```js
