@@ -34,17 +34,17 @@ Using cdn:
 ```js
 import among from 'among-store';
 
-// save key-value
-among.save('name', 'judas');
+// storage data format as key-value with set API
+among.set('name', 'judas');
 
-// get value by key
+// load data by key with get API
 among.get('name');  // judas
 
-// update value by key
+// change value by key with update API
 among.update('name', 'kevin');
 among.get('name'); // kevin
 
-// remove data by key
+// delete data by key with remove API
 among.remove('name');
 among.get('name'); // undefined
 ```
@@ -77,6 +77,13 @@ among.clear('1087967'); // true, and all data has been removed
 
 // get all data in storage
 among.getAll(); // ... all data show here
+
+// please notice that your data is storaged with base64 encryption by default,
+// so if you do not want to save data with encryption, using the closeEncoding API
+
+among.closeEncoding();
+among.set('example', 'hello');
+among.get('example'); // 'hello'
 ```
 
 ## Origin
